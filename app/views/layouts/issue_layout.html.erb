@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NewIssues</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%- content_for :nav do %>
+  <p>I'm a nav</p>
+<%- end %>
+<%= yield :nav%>
+<h1>Jingen Lin's App</h1>
+<%= yield %>
+
+</body>
+</html>
