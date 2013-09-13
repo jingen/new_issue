@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912215513) do
+ActiveRecord::Schema.define(version: 20130913161251) do
 
   create_table "issues", force: true do |t|
     t.string   "title"
@@ -19,12 +19,20 @@ ActiveRecord::Schema.define(version: 20130912215513) do
     t.integer  "no_followers"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "project_id"
+    t.integer  "project_id",   default: 1
   end
 
   create_table "projects", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "timelines", force: true do |t|
+    t.string   "content"
+    t.string   "timelineable_type"
+    t.integer  "timelineable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
