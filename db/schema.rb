@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130913161251) do
+ActiveRecord::Schema.define(version: 20130920150648) do
 
   create_table "issues", force: true do |t|
     t.string   "title"
@@ -19,7 +19,11 @@ ActiveRecord::Schema.define(version: 20130913161251) do
     t.integer  "no_followers"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "project_id",   default: 1
+    t.integer  "project_id",         default: 1
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "projects", force: true do |t|
