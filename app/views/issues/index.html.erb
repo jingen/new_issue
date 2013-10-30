@@ -15,6 +15,7 @@
   <tbody>
     <% @issues.each do |issue| %>
       <tr>
+        <td><%= image_tag issue.photo.url(:small)%></td>
         <td><%= issue.title %></td>
         <td><%= issue.description %></td>
         <td><%= issue.no_followers %></td>
